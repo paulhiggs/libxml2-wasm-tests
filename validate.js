@@ -1,4 +1,7 @@
 import { XmlDocument, XsdValidator, XmlValidateError } from "libxml2-wasm";
+import { xmlRegisterFsInputProviders } from "libxml2-wasm/lib/nodejs.mjs";
+xmlRegisterFsInputProviders();
+
 import { readFileSync } from "fs";
 
 const sch1 = XmlDocument.fromBuffer(readFileSync("./dvbi_v2.0.xsd"));
